@@ -1,0 +1,25 @@
+center
+	h1 #{title}
+	each item,i in c.comment
+		#comment
+			table
+				tr
+					td {#{c.comment[i].numC}}
+					td #{c.comment[i].email}:
+					td #{c.comment[i].comment}
+		
+	form(action='/', method='post')
+		table
+			tr
+				td email:
+				td 
+					input(type="text" , name="email")
+
+			tr
+				td comment:
+				td
+					textarea(placeholder="What do u think?", name="comment", rows="10" , cols="15")
+			tr
+				td
+				td
+					input(type="submit", value="Post it!")
